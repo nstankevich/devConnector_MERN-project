@@ -82,18 +82,13 @@ export const deletePost = (id) => async (dispatch) => {
 };
 
 // Add post
-export const addPost = (formData, id) => async (dispatch) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
+export const addPost = (formData) => async (dispatch) => {
   try {
-    await api.post(`/posts`, formData, config);
+    const res = await api.post(`/posts`, formData);
 
     dispatch({
       type: ADD_POST,
-      payload: id,
+      payload: res.data,
     });
 
     dispatch(setAlert('Post Created', 'success'));
@@ -124,13 +119,8 @@ export const getPost = (id) => async (dispatch) => {
 
 // Add comments
 export const addComment = (postId, formData) => async (dispatch) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
   try {
-    const res = await api.post(`/posts/comment/${postId}`, formData, config);
+    const res = await api.post(`/posts/comment/${postId}`, formData);
 
     dispatch({
       type: ADD_COMMENT,

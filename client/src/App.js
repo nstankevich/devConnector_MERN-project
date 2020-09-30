@@ -19,7 +19,6 @@ const App = () => {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
     }
-
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
@@ -34,7 +33,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route exact path="/" component={Landing} />
             <Route component={Routes} />
           </Switch>
         </Fragment>

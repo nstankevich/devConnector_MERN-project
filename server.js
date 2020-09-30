@@ -8,11 +8,7 @@ const app = express();
 connectDB();
 
 // Init Middleware
-// removed this from the end - { extended: false }
 app.use(express.json());
-
-// removed from original code
-// app.get('/', (req, res) => res.send('API Running'));
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));

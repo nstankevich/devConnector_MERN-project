@@ -59,17 +59,16 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Create Your Account
+        <i className='fas fa-user' /> Create Your Account
       </p>
-      <form className='form' onSubmit={(e) => onSubmit(e)}>
+      <form className='form' onSubmit={onSubmit}>
         <div className='form-group'>
           <input
             type='text'
             placeholder='Name'
             name='name'
             value={name}
-            onChange={(e) => onChange(e)}
-            required
+            onChange={onChange}
           />
         </div>
         <div className='form-group'>
@@ -78,8 +77,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder='Email Address'
             name='email'
             value={email}
-            onChange={(e) => onChange(e)}
-            required
+            onChange={onChange}
           />
           <small className='form-text'>
             This site uses Gravatar so if you want a profile image, use a
@@ -92,7 +90,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder='Password'
             name='password'
             value={password}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             minLength='6'
           />
         </div>
@@ -102,7 +100,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder='Confirm Password'
             name='password2'
             value={password2}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             minLength='6'
           />
         </div>
